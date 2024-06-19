@@ -1,11 +1,13 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "./Account.sol";
 
 contract SystemConfiguration is Ownable {
-    address private accountImplementation;
+    address private accountImplementation; 
 
-    address private ethUsdPriceFeed;
+    address private ethUsdPriceFeed; 
 
     address private accountManager;
 

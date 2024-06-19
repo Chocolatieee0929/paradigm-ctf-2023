@@ -3,15 +3,15 @@
 
 ## 题目
 - [x] Hello World
-- [] Black Sheep
+- [ ] Black Sheep
 - [x] 100%
-- [] Dai++
-- [] DoDont
-- [] Grains of Sand
-- [] Suspicious Charity
-- [] Token Locker
-- [] Skill Based Game
-- [] Enterprise Blockchain
-- [] Dragon Tyrant
-- [] Hopping Into Place
-- [] Oven
+- [x] Dai++
+- [ ] DoDont
+- [ ] Grains of Sand
+- [ ] Suspicious Charity
+- [ ] Token Locker
+- [ ] Skill Based Game
+- [ ] Enterprise Blockchain
+- [ ] Dragon Tyrant
+- [ ] Hopping Into Place
+- [ ] Oven

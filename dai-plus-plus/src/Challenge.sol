@@ -12,6 +12,6 @@ contract Challenge {
     }
 
     function isSolved() external view returns (bool) {
-        return IERC20(SYSTEM_CONFIGURATION.getStablecoin()).totalSupply() > 1_000_000_000_000 ether;
+        return IERC20(SYSTEM_CONFIGURATION.getStablecoin()).totalSupply() > 1_000_000_000_000 ether; // 1e12 ether
     }
 }

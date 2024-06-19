@@ -1,7 +1,11 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.26;
 import "@clones-with-immutable-args/src/ClonesWithImmutableArgs.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./Account.sol";
 import "./Stablecoin.sol";
+
+/* stable coin and manager */
 
 contract AccountManager {
     using ClonesWithImmutableArgs for address;
@@ -39,7 +43,7 @@ contract AccountManager {
         Account account = Account(
             SYSTEM_CONFIGURATION.getAccountImplementation().clone(
                 abi.encodePacked(SYSTEM_CONFIGURATION, owner, recoveryAddresses.length, recoveryAddresses)
-            )
+            ) // clone从calldata读取数据，限制data长度为65536
         );
 
         validAccounts[account] = true;
@@ -60,7 +64,7 @@ contract AccountManager {
         external
         onlyValidAccount(account)
     {
-        account.decreaseDebt(amount, memo);
+        account.decreaseDebt(amount, memo); // 损坏的合约没法执行这一步，runSize过长
 
         Stablecoin(SYSTEM_CONFIGURATION.getStablecoin()).burn(msg.sender, amount);
     }
