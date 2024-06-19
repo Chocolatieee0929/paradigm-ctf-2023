@@ -6,7 +6,7 @@
 - [ ] Black Sheep
 - [x] 100%
 - [x] Dai++
-- [ ] DoDont
+- [X] DoDont
 - [ ] Grains of Sand
 - [ ] Suspicious Charity
 - [ ] Token Locker
@@ -15,3 +15,8 @@
 - [ ] Dragon Tyrant
 - [ ] Hopping Into Place
 - [ ] Oven
+
+## 总结笔记
+- 首先需要明确，不要一拿到合约就一头扎进去看，做 ctf 时需要明确夺旗目标，用目标出发去看合约。
+- 多多关注非常规的入口条件
+- 找到影响因子之后，要从宏观上考虑什么会被影响因子左右，可以先从flashLoan等一些常见的函数进行检查
