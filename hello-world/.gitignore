@@ -1,0 +1,10 @@
+broadcast/
+cache/
+out/
+lib/
+.vscode
+artifacts/
+
+.github/
+
+.env
