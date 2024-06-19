@@ -1,19 +1,25 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.6.2 <0.9.0;
 
-import "forge-std/Script.sol";
+import {Test} from "forge-std/Test.sol";
 
-abstract contract CTFDeployment is Script {
-    function run() external {
-        address player = getAddress(0);
-        address system = getAddress(1);
+abstract contract BaseTest is Test {
+    address internal challenge;
 
-        address challenge = deploy(system, player);
+    address player = 0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f; // 8
+    address system = 0xa0Ee7A142d267C1f36714E4a8F75612F20a79720; // 9
+
+    function setUp() public virtual {
+        uint256 forkId = vm.createFork(vm.envString("MAINNET_RPC"));
+        vm.selectFork(forkId);
+
+        vm.deal(player, 10000 ether);
+        vm.deal(system, 10000 ether);
+
+        vm.label(player, "player");
+        vm.label(system, "system");
         
-        vm.writeFile(vm.envOr("OUTPUT_FILE", string("/tmp/deploy.txt")), vm.toString(challenge));
     }
-
-    function deploy(address system, address player) virtual internal returns (address);
     
     function getAdditionalAddress(uint32 index) internal returns (address) {
         return getAddress(index + 2);
