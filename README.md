@@ -2,14 +2,14 @@
 [Paradigm CTF](https://ctf.paradigm.xyz/) 是区块链行业最顶级、知名度最高的针对智能合约黑客的在线竞赛，由web3顶级投资公司Paradigm组织，CTF题目由Sumczsun和受到邀请的客座作者创造的多项挑战组成。每一项挑战的目标都是破解或通过攻击技术解决问题。
 
 ## 题目
-- [x] Hello World
-- [ ] Black Sheep
-- [x] 100%
-- [x] Dai++
-- [X] DoDont
-- [ ] Grains of Sand
-- [ ] Suspicious Charity
-- [ ] Token Locker
+- [x] Hello World(self-destruct)
+- [ ] Black Sheep(Huff)
+- [x] 100%(abi.encodePacket, 共享钱包的检查)
+- [x] Dai++(clone越界，未对敏感因子进行检查，绕过持仓检查)
+- [X] DoDont(init函数缺乏权限控制)
+- [x] Grains of Sand
+- [X] Suspicious Charity
+- [X] Token Locker (访问控制外部调用)
 - [ ] Skill Based Game
 - [ ] Enterprise Blockchain
 - [ ] Dragon Tyrant
