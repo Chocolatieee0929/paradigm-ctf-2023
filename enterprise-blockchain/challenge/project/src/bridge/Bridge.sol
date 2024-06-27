@@ -127,7 +127,7 @@ contract Bridge {
             require(IERC20(_token).transfer(_to, _amount), "T");
         }
     }
-
+    // @audit - 权限访问控制，正常来说，应该只有Bridge合约可以调用该函数
     function sendRemoteMessage(uint256 _targetChainId, address _targetAddress, bytes calldata _message)
         public
         payable

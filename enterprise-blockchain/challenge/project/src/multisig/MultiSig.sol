@@ -19,6 +19,7 @@ contract SimpleMultiSigGov {
         o2 = owner2;
     }
 
+    // @audit - Sign dont relate to chain_id.
     function execTransaction(
         address to,
         bytes memory data,

@@ -29,7 +29,7 @@ class Challenge(PwnChallengeLauncher):
         }
 
     def get_daemon_instances(self) -> Dict[str, DaemonInstanceArgs]:
-        return {
+            return {
             "relayer": DaemonInstanceArgs(
                 image="gcr.io/paradigm-ctf/enterprise-blockchain-relayer:latest"
             )
